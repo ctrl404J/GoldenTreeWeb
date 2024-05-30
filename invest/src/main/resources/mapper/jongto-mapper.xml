@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.goldenTree.invest.mapper.InvestMapper">
+	
+    <select id="findJongtoList" resultType="com.goldenTree.invest.dto.JongtoBoardDto">
+	    SELECT * FROM jongtoboard 
+	    ORDER BY jongto_Id DESC 
+	    LIMIT #{pageSize} OFFSET #{offset}
+	</select>
+    
+    <select id="detailJongto" resultType="com.goldenTree.invest.dto.JongtoBoardDto">
+        select * from jongtoboard WHERE jongto_id = #{jongto_id}
+    </select>
+    
+	<insert id="insertJongto" parameterType="com.goldenTree.invest.dto.JongtoBoardDto">
+	    INSERT INTO jongtoboard (
+	        jongto_id,
+	        jongto_sort,
+	        jongto_title,
+	        jongto_content,
+	        jongto_author,
+<!--	        jongto_views,-->
+	        jongto_createdDate,
+	        jongto_pass
+	    ) VALUES (
+	        #{jongto_id},
+	        #{jongto_sort},
+	        #{jongto_title},
+	        #{jongto_content},
+	        #{jongto_author},
+<!--	        #{jongto_views},-->
+	        #{jongto_createdDate},
+	        #{jongto_pass}
+	    )
+	</insert>
+	
+	<delete id="deleteJongto" parameterType="String">
+	    DELETE FROM jongtoboard
+	    WHERE jongto_id = #{jongtoId} AND jongto_pass = #{jongtoPass}
+	</delete>
+	
+	<select id="countJongtoBoard" resultType="Integer">
+		SELECT COUNT(*) FROM jongtoboard;
+	</select>
+	
+    
+</mapper>

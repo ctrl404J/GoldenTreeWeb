@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+		xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+		layout:decorate="layouts/mainLayout">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/css/main.css">
+</head>
+	<div layout:fragment="content">
+		<table class="table table-hover-light">
+            <thead>
+                <tr>
+                    <th scope="col">번호</th>
+                    <th scope="col">종류</th>
+                    <th scope="col" colspan="2">제목</th>
+                    <th scope="col">작성자</th>
+                    <th scope="col">조회수</th>
+                    <th scope="col">날짜</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="jongtoBoard, iterStat : ${jongtoList}">
+                    <td th:text="${jongtoBoard.jongto_Id}"></td>
+                    <td th:text="${jongtoBoard.jongto_sort}"></td>
+                    <td colspan="2" th:text="${jongtoBoard.jongto_Title}"></td>
+                    <td th:text="${jongtoBoard.jongto_Author}"></td>
+                    <td th:text="${jongtoBoard.jongto_Views}"></td>
+                    <td th:text="${jongtoBoard.jongto_CreatedDate}"></td>
+                </tr>
+<!--				<tr>-->
+<!--                    <td th:text="aaa"></td>-->
+<!--                    <td th:text="bbbb"></td>-->
+<!--                    <td colspan="cccc"></td>-->
+<!--                    <td th:text="ddd"></td>-->
+<!--                    <td th:text="ffff"></td>-->
+<!--                    <td th:text="eee"></td>-->
+<!--                    <td th:text="eee"></td>-->
+<!--                </tr>-->
+            </tbody>
+        </table>
+		</div>
+</html>

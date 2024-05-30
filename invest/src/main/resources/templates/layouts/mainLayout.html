@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+<!--	<link href="../static/css/templatemo_style.css" rel="stylesheet" type="text/css" th:href="@{/css/templatemo_style.css}"/>-->
+	
+<!--	<th:block layout:fragment="script"></th:block>-->
+<!--    <th:block layout:fragment="script"></th:block>-->
+    <title>금나무</title>
+</head>
+
+<body >
+	<div th:replace="fragments/header :: header"></div>
+	
+	<div >
+		<div layout:fragment="content" id="content"></div>
+	</div>
+	
+	<div th:replace="fragments/footer :: footer"></div>
+</body>
+
+</html>

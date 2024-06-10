@@ -59,7 +59,7 @@
             <td colspan="7" style="text-align:center;">
                 <div class="pagination">
                     <!-- 처음으로 가는 링크 -->
-                    <a th:if="${currentPage > 1}" th:href="@{/jongto(pageNum=1)}">처음</a>
+<!--                    <a th:if="${currentPage > 1}" th:href="@{/jongto(pageNum=1)}">처음</a>-->
                     <!-- 이전 페이지로 가는 링크 -->
                     <a th:if="${currentPage > 1}" th:href="@{/jongto(pageNum=${currentPage - 1})}">이전</a>
                     
@@ -73,7 +73,7 @@
                     <!-- 다음 페이지로 가는 링크 -->
                     <a th:if="${currentPage < totalPages}" th:href="@{/jongto(pageNum=${currentPage + 1})}">다음</a>
                     <!-- 마지막 페이지로 가는 링크 -->
-                    <a th:if="${currentPage < totalPages}" th:href="@{/jongto(pageNum=${totalPages})}">마지막</a>
+<!--                    <a th:if="${currentPage < totalPages}" th:href="@{/jongto(pageNum=${totalPages})}">마지막</a>-->
                 </div>
             </td>
             <!-- 글쓰기 링크 -->

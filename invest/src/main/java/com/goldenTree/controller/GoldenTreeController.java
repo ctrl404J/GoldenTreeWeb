@@ -1,4 +1,4 @@
-package com.goldenTree.invest.controller;
+package com.goldenTree.controller;
 
 import java.util.List;
 
@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.goldenTree.invest.dto.JongtoBoardDto;
-import com.goldenTree.invest.service.InvestService;
+import com.goldenTree.dto.JongtoBoardDto;
+import com.goldenTree.service.InvestService;
 
 import lombok.RequiredArgsConstructor;
 
@@ -102,4 +102,5 @@ public class GoldenTreeController {
 		return returnResult;
 		
 	};
+	
 }

@@ -1,10 +1,10 @@
-package com.goldenTree.invest.mapper;
+package com.goldenTree.mapper;
 
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import com.goldenTree.invest.dto.JongtoBoardDto;
+import com.goldenTree.dto.JongtoBoardDto;
 
 @Mapper
 public interface InvestMapper {

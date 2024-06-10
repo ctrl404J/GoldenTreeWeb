@@ -1,12 +1,12 @@
-package com.goldenTree.invest.service;
+package com.goldenTree.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.goldenTree.invest.dto.JongtoBoardDto;
-import com.goldenTree.invest.mapper.InvestMapper;
+import com.goldenTree.dto.JongtoBoardDto;
+import com.goldenTree.mapper.InvestMapper;
 
 import lombok.RequiredArgsConstructor;
 

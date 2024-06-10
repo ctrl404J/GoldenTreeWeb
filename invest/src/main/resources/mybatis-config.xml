@@ -6,11 +6,11 @@
 
     <!-- Type Alias 설정 -->
     <typeAliases>
-        <typeAlias alias="InvestDao" type="com.goldenTree.invest.mapper.InvestMapper"/>
-        <typeAlias alias="JongtoBoardDto" type="com.goldenTree.invest.dto.JongtoBoardDto"/>
-        <typeAlias alias="JongtoBoardDto" type="com.goldenTree.invest.dto.JongtoCommentsDto"/>
-        <typeAlias alias="InvestService" type="com.goldenTree.invest.service.InvestService"/>
-        <typeAlias alias="InvestServiceImpl" type="com.goldenTree.invest.service.InvestServiceImpl"/>
+        <typeAlias alias="InvestDao" type="com.goldenTree.mapper.InvestMapper"/>
+        <typeAlias alias="JongtoBoardDto" type="com.goldenTree.dto.JongtoBoardDto"/>
+        <typeAlias alias="JongtoBoardDto" type="com.goldenTree.dto.JongtoCommentsDto"/>
+        <typeAlias alias="InvestService" type="com.goldenTree.service.InvestService"/>
+        <typeAlias alias="InvestServiceImpl" type="com.goldenTree.service.InvestServiceImpl"/>
     </typeAliases>
 
     <!-- 데이터베이스 연결 설정 -->

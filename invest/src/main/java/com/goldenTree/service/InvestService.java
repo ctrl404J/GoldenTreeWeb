@@ -1,10 +1,10 @@
-package com.goldenTree.invest.service;
+package com.goldenTree.service;
 
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.goldenTree.invest.dto.JongtoBoardDto;
+import com.goldenTree.dto.JongtoBoardDto;
 
 @Service
 public interface InvestService {

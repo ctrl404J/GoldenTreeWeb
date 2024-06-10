@@ -1,4 +1,4 @@
-package com.goldenTree.invest.dto;
+package com.goldenTree.dto;
 
 import java.sql.Timestamp;
 

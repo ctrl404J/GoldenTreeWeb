@@ -21,4 +21,9 @@ public class GoldenTreeChatController {
     public ChatMessage sendMessage(ChatMessage chatMessage) {
         return chatMessage;
     }
+    
+    @GetMapping("/GoldenTreeRoom")
+    public String GoldenTree(Model model) {
+        return "chatRoom2";
+    }
 }

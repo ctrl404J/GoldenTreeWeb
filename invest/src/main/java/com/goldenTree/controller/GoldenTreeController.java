@@ -67,15 +67,19 @@ public class GoldenTreeController {
 	
 	@PostMapping("jongtoWriteAction")
 	public String jongtoWriteAction(JongtoBoardDto jongtoBoardDto) {
-	    investService.insertJongto(jongtoBoardDto);
-	    return "redirect:/jongto"; // 리다이렉트할 페이지 경로를 지정하거나, 해당 페이지의 뷰 이름을 반환
+		
+	    try {
+			investService.insertJongto(jongtoBoardDto);
+		} catch (Exception e) {
+			System.out.println("입력 중 오류가 발생했습니다.");
+		}
+		return "redirect:/jongto"; // 리다이렉트할 페이지 경로를 지정하거나, 해당 페이지의 뷰 이름을 반환
 	}
 	
 	@GetMapping("/jongtoDetail")
-	public String jongtoDetail(Integer jongtoId, Model model) {
-		System.out.println("아이디는:"+jongtoId);
+	public String jongtoDetail(Integer jongtoId, Integer jongtoViews,Model model) {
 		
-		JongtoBoardDto dto = investService.detailJongto(jongtoId);
+		JongtoBoardDto dto = investService.detailJongto(jongtoId, jongtoViews);
 		
 		System.out.println(dto.getJongto_author());
 		

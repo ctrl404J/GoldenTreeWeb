@@ -1,7 +1,5 @@
 package com.goldenTree.dto;
 
-import java.sql.Timestamp;
-
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -17,7 +15,8 @@ public class JongtoBoardDto {
 	private String jongto_content;
 	private String jongto_author;
 	private Integer jongto_views = 0;
-	private Timestamp jongto_createdDate;
+	private String jongto_createdDate;
 	private String jongto_pass;
+	
 	
 }

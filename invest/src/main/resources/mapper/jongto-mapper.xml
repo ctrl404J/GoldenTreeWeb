@@ -6,14 +6,30 @@
 <mapper namespace="com.goldenTree.mapper.InvestMapper">
 	
     <select id="findJongtoList" resultType="com.goldenTree.dto.JongtoBoardDto">
-	    SELECT * FROM jongtoboard 
+	    SELECT 
+	        jongto_Id, 
+	        jongto_sort, jongto_title, jongto_content, jongto_author, jongto_views,
+	        DATE_FORMAT(jongto_createdDate, '%Y-%m-%d') as jongto_createdDate,
+	        jongto_pass
+	    FROM jongtoboard 
 	    ORDER BY jongto_Id DESC 
 	    LIMIT #{pageSize} OFFSET #{offset}
 	</select>
     
     <select id="detailJongto" resultType="com.goldenTree.dto.JongtoBoardDto">
-        select * from jongtoboard WHERE jongto_id = #{jongto_id}
+        select 
+        	jongto_Id, jongto_sort, jongto_title, jongto_content, jongto_author, jongto_views,
+	        DATE_FORMAT(jongto_createdDate, '%Y-%m-%d') as jongto_createdDate,
+	        jongto_pass
+	         from jongtoboard 
+	         WHERE jongto_id = #{jongto_id}
     </select>
+    
+    <update id="updateJongtoViews">
+	    UPDATE jongtoboard
+	    SET jongto_views =#{views}+1
+	    WHERE jongto_id = #{jongtoId}
+	</update>
     
 	<insert id="insertJongto" parameterType="com.goldenTree.dto.JongtoBoardDto">
 	    INSERT INTO jongtoboard (

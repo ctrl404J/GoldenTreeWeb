@@ -46,7 +46,7 @@
             <td th:text="${jongtoBoard.jongto_sort}"></td>
             <td colspan="3">
                 <a th:text="${jongtoBoard.jongto_title}" 
-                   th:href="@{/jongtoDetail(jongtoId=${jongtoBoard.jongto_id})}" 
+                   th:href="@{/jongtoDetail(jongtoId=${jongtoBoard.jongto_id}, jongtoViews=${jongtoBoard.jongto_views})}" 
                    style="cursor: pointer;"></a>
             </td>
             <td th:text="${jongtoBoard.jongto_author}"></td>
@@ -83,7 +83,6 @@
 </table>
 
 		            <!-- -->
-		            
 <!--		        </div>-->
 <br>
 		        

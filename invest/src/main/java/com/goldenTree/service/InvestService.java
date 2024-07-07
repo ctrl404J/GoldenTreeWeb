@@ -13,8 +13,10 @@ public interface InvestService {
 
 	public void insertJongto(JongtoBoardDto jongtoBoardDto);
 
-	public JongtoBoardDto detailJongto(Integer jongtoId);
-
+	public JongtoBoardDto detailJongto(Integer jongtoId, Integer jongtoViews);
+	
+	void updateJongtoViews(Integer jongtoId, Integer views);
+	
 	public int deleteJongto(String jongtoId, String jongtoPass);
 
 	public int countJongtoBoard();

@@ -14,6 +14,8 @@ public interface InvestMapper {
 	public void insertJongto(JongtoBoardDto jongtoBoardDto);
 	
 	public JongtoBoardDto detailJongto(Integer jongtoId);
+	
+	public void updateJongtoViews(Integer jongtoId, Integer views);
 
 	public int deleteJongto(String jongtoId, String jongtoPass);
 

@@ -12,7 +12,7 @@ body {
 	background: url(../images/templatemo_body_bg.png);
 }
 		
-a:link, a:visited { color: #191815; text-decoration: none; font-weight: normal; font-style: italic;} 
+a:link, a:visited { color: #191815; text-decoration: none; font-weight: normal;} 
 a:active, a:hover { color: #191815; text-decoration: underline; cursor: pointer;}
 
 p { margin: 0px; padding: 0px; text-align: justify; }
@@ -264,7 +264,10 @@ h5 {
 /*	padding: 0 105px 0 125px;*/
 /*	background: url(../static/images/templatemo_content_bg.png) repeat-y;*/
 /*}*/
-
+.table {
+   border-collapse: separate;
+   border-spacing: 5px 5px;
+ }
 
 /* 추가 */
 

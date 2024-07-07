@@ -63,7 +63,7 @@ input[type="submit"]:active {
 		        	<h2>글쓰기</h2>
 		            
 		            <!-- -->
-						<form action="jongtoWriteAction" method="post">
+						<form action="jongtoWriteAction" method="post" id="jongtoForm">
 							<table> 
 								<tr>
 									<td>
@@ -76,24 +76,48 @@ input[type="submit"]:active {
 							    <tr><td class="header">제목</td></tr>
 							    <tr><td><input type="text" placeholder="제목을 입력하세요" name="jongto_title" id="titletext"></td></tr>
 							    <tr><td class="header">내용</td></tr>
-							    <tr><td><textarea placeholder="내용을 입력하세요" name="jongto_content"></textarea></td></tr>
+							    <tr><td><textarea placeholder="내용을 입력하세요" id="inputContent" name="jongto_content"></textarea></td></tr>
 							    <tr></tr>
 							    <tr></tr>
 							    <tr>
 							    	<td>
-										작성자<input type="text" placeholder="제목을 입력하세요" name="jongto_author" style="width: 150px; height: 25px; margin-left: 15px;">
+										작성자<input type="text" id="inputAuthor" placeholder="작성자를 입력하세요" name="jongto_author" style="width: 150px; height: 25px; margin-left: 15px;">
 										&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;
-										비밀번호<input type="password" placeholder="비밀번호를 입력하세요" name="jongto_pass" style="width: 150px; height: 25px; margin-left: 15px;">
+										비밀번호<input type="password" id="inputPass" placeholder="비밀번호를 입력하세요" name="jongto_pass" style="width: 150px; height: 25px; margin-left: 15px;">
 									</td>
 								</tr>
-							    <tr><td><input type="submit" value="등록" onclick="alert('작성 완료!')" style="margin-top: 20px;"></td></tr>
+							    <tr><td><input type="submit" class="writeFormButton" value="등록" onclick="writeValidation(event)" style="margin-top: 20px;"></td></tr>
 							</table>
 						</form>
 		            <!-- ★등록버튼에 입력란 빈값체크 함수를 넣자. -->
-		            
-<!--		        </div>-->
+<script th:inline="javascript">
+    function writeValidation(event) {
+        event.preventDefault(); // 폼 제출을 막음
+
+        var inputTitle = document.getElementById('titletext').value;
+        var inputContent = document.getElementById('inputContent').value;
+        var inputPass = document.getElementById('inputPass').value;
+        var inputAuthor = document.getElementById('inputAuthor').value;
+
+        if (inputTitle.trim() === '') {
+            alert('제목을 입력해주세요.');
+            return;
+        } else if (inputContent.trim() === '') {
+            alert('내용을 입력해주세요.');
+            return;
+        } else if (inputPass.trim() === '') {
+            alert('비밀번호를 입력해주세요.');
+            return;
+        } else if (inputAuthor.trim() === '') {
+            alert('작성자를 입력해주세요.');
+            return;
+        }
+
+        // 필수 입력 항목이 모두 입력되었을 때 submit 실행
+        document.getElementById('jongtoForm').submit();
+		alert('작성완료!');
+		}
+</script>
 				<div class="cleaner"></div>
-		  	</div> <!-- end of templatemo_content -->
-		</div>
 </body>
 </html>

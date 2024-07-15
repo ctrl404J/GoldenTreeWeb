@@ -24,6 +24,6 @@ public class GoldenTreeChatController {
     
     @GetMapping("/GoldenTreeRoom")
     public String GoldenTree(Model model) {
-        return "chatRoom2";
+        return "adminRoom";
     }
 }
